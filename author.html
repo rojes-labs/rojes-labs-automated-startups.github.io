@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalyanjit Hatibaruah | Web3 Tech Management Consultant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Author page specific styles */
+        .author-hero {
+            background: linear-gradient(135deg, #3a0ca3 0%, #4361ee 100%);
+            padding: 6rem 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .author-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .author-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+            object-fit: cover;
+            background-color: #fff;
+        }
+        
+        .author-name {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .author-title {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: #3a0ca3;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            background-color: #f8f9fa;
+        }
+        
+        .author-content {
+            padding: 5rem 0;
+        }
+        
+        .author-bio {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #f8f9fa;
+            color: #3a0ca3;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px);
+            background-color: #3a0ca3;
+            color: white;
+        }
+        
+        .coaching-section {
+            background-color: #f8f9fa;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .coaching-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .coaching-heading {
+            font-size: 2.5rem;
+            color: #3a0ca3;
+            margin-bottom: 1.5rem;
+        }
+        
+        .coaching-description {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+        }
+        
+        .coaching-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .coaching-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+        
+        .coaching-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .coaching-card-icon {
+            font-size: 2.5rem;
+            color: #4361ee;
+            margin-bottom: 1.5rem;
+        }
+        
+        .coaching-card-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2b2d42;
+        }
+        
+        .coaching-card-description {
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .testimonials {
+            padding: 5rem 0;
+        }
+        
+        .testimonial-heading {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #3a0ca3;
+            margin-bottom: 3rem;
+        }
+        
+        .testimonial-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(67, 97, 238, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            object-fit: cover;
+        }
+        
+        .testimonial-author-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .testimonial-author-title {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        
+        @media (max-width: 768px) {
+            .author-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .author-name {
+                font-size: 2rem;
+            }
+            
+            .coaching-heading, .testimonial-heading {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Automated Startup Guide Logo" style="height: 40px; width: auto;">
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="introduction.html">Introduction</a></li>
+                    <li><a href="validation.html">Idea Validation</a></li>
+                    <li><a href="tech-stack.html">Tech Stack</a></li>
+                    <li><a href="business-models.html">Business Models</a></li>
+                    <li><a href="team.html">Team Structure</a></li>
+                    <li><a href="funding.html">Funding</a></li>
+                    <li><a href="scaling.html">Scaling</a></li>
+                    <li><a href="technologies.html">Technologies</a></li>
+                    <li><a href="author.html" class="active">Author</a></li>
+                </ul>
+                <div class="mobile-nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="author-hero">
+        <div class="author-container">
+            <img src="images/kalyan.jpg" alt="Kalyanjit Hatibaruah" class="author-image">
+            <h1 class="author-name">Kalyanjit Hatibaruah</h1>
+            <h2 class="author-title">Web3 Tech Management Consultant</h2>
+            <a href="https://topmate.io/kalyanjit" target="_blank" class="cta-button">Book a Coaching Session</a>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/kalyanjit" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.instagram.com/kalyanjit" target="_blank" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/kalyanjit" target="_blank" class="social-link">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://wa.me/919864011106" target="_blank" class="social-link">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="author-content">
+        <div class="container">
+            <div class="author-bio">
+                <p>Kalyanjit Hatibaruah is a distinguished Web3 Technology Management Consultant with extensive experience in guiding startups and established businesses through the complex landscape of emerging technologies. With a deep understanding of AI, blockchain, IoT, and other cutting-edge technologies, Kalyanjit helps entrepreneurs transform innovative ideas into successful automated ventures.</p>
+                
+                <p>Having worked with numerous startups across various sectors, Kalyanjit brings practical insights and proven strategies to help founders navigate the challenges of building technology-driven businesses. His expertise spans from initial idea validation to scaling operations, with a particular focus on leveraging automation to create efficient, scalable business models.</p>
+                
+                <p>As the author of "The Ultimate Guide to Launching an Automated Startup in Emerging Technologies," Kalyanjit distills years of consulting experience into actionable frameworks and methodologies that entrepreneurs can apply immediately to their ventures.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="coaching-section">
+        <div class="coaching-container">
+            <h2 class="coaching-heading">Transform Your Tech Venture with Expert Coaching</h2>
+            <p class="coaching-description">Book a personalized coaching session with Kalyanjit to accelerate your startup journey and overcome the unique challenges of building an automated business in emerging technologies.</p>
+            
+            <div class="coaching-cards">
+                <div class="coaching-card">
+                    <div class="coaching-card-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="coaching-card-title">Idea Validation & Market Fit</h3>
+                    <p class="coaching-card-description">Get expert feedback on your startup idea and learn proven methodologies to validate market demand with minimal resources. Identify the most promising opportunities in emerging technology spaces.</p>
+                </div>
+                
+                <div class="coaching-card">
+                    <div class="coaching-card-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="coaching-card-title">Tech Stack & Automation Strategy</h3>
+                    <p class="coaching-card-description">Receive personalized recommendations for your technology stack and automation approach. Learn how to leverage AI, blockchain, and no-code tools to build scalable systems with minimal human intervention.</p>
+                </div>
+                
+                <div class="coaching-card">
+                    <div class="coaching-card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="coaching-card-title">Growth & Scaling Roadmap</h3>
+                    <p class="coaching-card-description">Develop a clear roadmap for scaling your automated startup. Navigate common pitfalls and learn strategies for efficient growth while maintaining lean operations and maximizing profitability.</p>
+                </div>
+            </div>
+            
+            <a href="https://topmate.io/kalyanjit" target="_blank" class="cta-button">Book Your Session Now</a>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="testimonial-heading">What Founders Say</h2>
+            
+            <div class="testimonial-cards">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">Kalyanjit's guidance was instrumental in helping us pivot our AI startup toward a more scalable, automated business model. His insights on tech stack selection and automation strategy saved us months of trial and error.</p>
+                    <div class="testimonial-author">
+                        <div>
+                            <p class="testimonial-author-name">Arjun Mehta</p>
+                            <p class="testimonial-author-title">Founder, AI Analytics Platform</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">The frameworks Kalyanjit provided for validating our blockchain product were game-changing. We completely restructured our approach based on his advice and secured our first enterprise clients within weeks.</p>
+                    <div class="testimonial-author">
+                        <div>
+                            <p class="testimonial-author-name">Sarah Chen</p>
+                            <p class="testimonial-author-title">Co-founder, DeFi Startup</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">As a non-technical founder, I was struggling to build an automated business. Kalyanjit helped me identify the right no-code tools and automation strategies that allowed us to launch with minimal technical resources.</p>
+                    <div class="testimonial-author">
+                        <div>
+                            <p class="testimonial-author-name">Michael Rodriguez</p>
+                            <p class="testimonial-author-title">CEO, IoT Solutions Company</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="coaching-section">
+        <div class="coaching-container">
+            <h2 class="coaching-heading">Ready to Build Your Automated Startup?</h2>
+            <p class="coaching-description">Take the first step toward creating a successful venture in emerging technologies. Book a coaching session with Kalyanjit today and get personalized guidance for your unique business challenges.</p>
+            
+            <a href="https://topmate.io/kalyanjit" target="_blank" class="cta-button">Book a Coaching Session</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="Automated Startup Guide Logo" style="height: 50px; width: auto; margin-bottom: 15px;">
+                    <p>The definitive resource for building automated startups in emerging technologies.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Guide Sections</h3>
+                        <ul>
+                            <li><a href="introduction.html">Introduction</a></li>
+                            <li><a href="validation.html">Idea Validation</a></li>
+                            <li><a href="tech-stack.html">Tech Stack</a></li>
+                            <li><a href="business-models.html">Business Models</a></li>
+                            <li><a href="team.html">Team Structure</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="#">Case Studies</a></li>
+                            <li><a href="#">Tools Directory</a></li>
+                            <li><a href="#">Startup Templates</a></li>
+                            <li><a href="#">Recommended Reading</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Connect</h3>
+                        <ul>
+                            <li><a href="author.html">About the Author</a></li>
+                            <li><a href="https://topmate.io/kalyanjit" target="_blank">Book a Coaching Session</a></li>
+                            <li><a href="#">Newsletter</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p><p>&copy; 2025 AutomatedStartup.Guide. All rights reserved.</p>copy; 2025 Flugelsoft Labs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
